@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Neela</string>
+    <string name="slide1_agreement_text">*By entering your details you are agreeing with terms and privacy policy of this app.</string>
+    <string name="slide2_cat_quotes">Daily Quotes Categories</string>
+    <string name="slide3_cat_news">Daily News Categories</string>
+    <string name="slide1_xml_title">Hi,\nI am Neela.</string>
+    <string name="slide1_xml_subtitle">And you\'re?</string>
+    <string name="slide1_hint_name">Enter your nickname</string>
+    <string name="slide1_hint_age">Age</string>
+    <string name="slide2_xml_instruct">Please choose min. 3 and max. 5 categories</string>
+    <string name="slide4_xml_title_success">Now you are\nall set.</string>
+    <string name="slide4_xml_subtitle_success">You are ready to explore me now.</string>
+
+    <string-array name="genders">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Others</item>
+        <item>Rather not to say</item>
+    </string-array>
+
+    <string-array name="categories_quotes">
+        <item>Motivation</item>
+        <item>Love</item>
+        <item>Sad</item>
+        <item>Motivation</item>
+        <item>Love</item>
+        <item>Sad</item>
+        <item>Motivation</item>
+        <item>Love</item>
+        <item>Sad</item>
+    </string-array>
+
+    <string-array name="categories_news">
+        <item>Politics</item>
+        <item>Tech</item>
+        <item>Sports</item>
+        <item>Politics</item>
+        <item>Tech</item>
+        <item>Sports</item>
+        <item>Politics</item>
+        <item>Tech</item>
+        <item>Sports</item>
+    </string-array>
+</resources>
