@@ -9,6 +9,12 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
+    <!-- Navigation Drawer Font Style -->
+    <style name="NavTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/arlrdbd</item>
+        <item name="android:textColor">@color/darkest_grey</item>
+        <item name="android:textSize">16sp</item>
+    </style>
     <!-- no action bar -->
     <style name="AppTheme.noActionBar" parent="AppTheme">
         <item name="windowActionBar">false</item>
@@ -17,7 +23,7 @@
     <!-- window transition with no action bar -->
     <style name="AppTheme.animatefade" parent="AppTheme.noActionBar">
         <item name="android:windowEnterAnimation">@anim/fade_in</item>
-        <item name="android:windowExitAnimation">@anim/fade_out</item>
+        <item name="android:windowExitAnimation">@anim/tran_fade_out</item>
     </style>
     <!-- chip custom style -->
     <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Filter">

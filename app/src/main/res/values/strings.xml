@@ -10,6 +10,14 @@
     <string name="slide2_xml_instruct">Please choose min. 3 and max. 5 categories</string>
     <string name="slide4_xml_title_success">Now you are\nall set.</string>
     <string name="slide4_xml_subtitle_success">You are ready to explore me now.</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="status_network_error_msg">Ohh!\nThere\'s no network connection available.</string>
+    <string name="setup_next">Next</string>
+    <string name="setup_back">Back</string>
+    <string name="setup_finish">Finish</string>
+    <string name="text_btn_conversation">Start conversation</string>
+    <string name="nav_text_privacy">Privacy policy</string>
 
     <string-array name="genders">
         <item>Gender</item>
@@ -20,26 +28,53 @@
     </string-array>
 
     <string-array name="categories_quotes">
-        <item>Motivation</item>
-        <item>Love</item>
-        <item>Sad</item>
-        <item>Motivation</item>
-        <item>Love</item>
-        <item>Sad</item>
-        <item>Motivation</item>
-        <item>Love</item>
-        <item>Sad</item>
+        <item>Arts</item>
+        <item>Car</item>
+        <item>Emotions</item>
+        <item>Entertainment</item>
+        <item>Environment</item>
+        <item>Famous</item>
+        <item>Health</item>
+        <item>Hobbies</item>
+        <item>Impressions</item>
+        <item>Knowledge</item>
+        <item>Mortality</item>
+        <item>Motivational</item>
+        <item>Nature</item>
+        <item>Occasional</item>
+        <item>Patriotism</item>
+        <item>Professional</item>
+        <item>Relationship</item>
+        <item>Science</item>
+        <item>Society</item>
+        <item>Spirituality</item>
+        <item>Sports</item>
+        <item>Technology</item>
+        <item>Travel</item>
+        <item>War</item>
     </string-array>
 
     <string-array name="categories_news">
+        <item>Business</item>
+        <item>Economic</item>
+        <item>Education</item>
+        <item>Entertainment</item>
+        <item>Health</item>
+        <item>Lifestyle</item>
         <item>Politics</item>
-        <item>Tech</item>
+        <item>Programming</item>
+        <item>Science</item>
+        <item>Social media</item>
         <item>Sports</item>
-        <item>Politics</item>
-        <item>Tech</item>
-        <item>Sports</item>
-        <item>Politics</item>
-        <item>Tech</item>
-        <item>Sports</item>
+        <item>Technology</item>
+        <item>Top headlines</item>
+        <item>Weather forecast</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="temp_title_home">Welcome back,\nSubhajit</string>
+    <string name="temp_title_quotes">Daily Quotes</string>
+    <string name="temp_title_news">Daily News</string>
+    <string name="temp_version_num">Version: 1.0.1</string>
 </resources>

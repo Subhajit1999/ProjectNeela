@@ -1,5 +1,6 @@
 package com.subhajitkar.commercial.project_neela.adapters;
 
+import android.app.Activity;
 import android.app.usage.StorageStats;
 import android.content.Context;
 import android.content.Intent;
@@ -8,9 +9,11 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
@@ -26,6 +29,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.subhajitkar.commercial.project_neela.R;
+import com.subhajitkar.commercial.project_neela.activities.SetupActivity;
 import com.subhajitkar.commercial.project_neela.objects.User;
 import com.subhajitkar.commercial.project_neela.utils.StaticFields;
 
@@ -37,6 +41,7 @@ public class SliderAdapter extends PagerAdapter implements AdapterView.OnItemSel
     private static final String TAG = "SliderAdapter";
 
     private Context context;
+    private Activity mActivity;
     private LayoutInflater layoutInflater;
     private TextView title, subTitle;
     private ChipGroup chipGroup;
@@ -45,8 +50,9 @@ public class SliderAdapter extends PagerAdapter implements AdapterView.OnItemSel
     private int[] layouts = {R.layout.walkthrough_slide1, R.layout.walkthrough_slide2,
             R.layout.walkthrough_slide2, R.layout.walkthrough_slide4};
 
-    public SliderAdapter(Context context){
+    public SliderAdapter(Context context, Activity activity){
         this.context = context;
+        mActivity = activity;
     }
 
     @Override
@@ -140,6 +146,7 @@ public class SliderAdapter extends PagerAdapter implements AdapterView.OnItemSel
                 StaticFields.userCredentials.setUserName(editable.toString());
             }
         });
+
         ageInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {

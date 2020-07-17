@@ -12,13 +12,9 @@ import android.widget.ImageView;
 
 import com.subhajitkar.commercial.project_neela.R;
 
-import pl.droidsonroids.gif.GifImageView;
-
 public class SplashActivity extends AppCompatActivity {
     private static final String TAG = "SplashActivity";
     private final int SPLASH_DISPLAY_LENGTH = 5000;
-    private GifImageView splashGif;
-    private ImageView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +23,7 @@ public class SplashActivity extends AppCompatActivity {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
 
-        setupGifImage();
-        setTitlePathView();
+        setupImageViews();
 
         new Handler().postDelayed(new Runnable(){
             @Override
@@ -36,22 +31,19 @@ public class SplashActivity extends AppCompatActivity {
                 Intent mainIntent = new Intent(SplashActivity.this, SetupActivity.class);
                 SplashActivity.this.startActivity(mainIntent);
                 SplashActivity.this.finish();
+                overridePendingTransition(R.anim.tran_slide_up,R.anim.tran_fade_out);
             }
         }, SPLASH_DISPLAY_LENGTH);
     }
 
-    private void setTitlePathView(){
-        title = findViewById(R.id.splash_title);
-        // gif image anim
-        Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
-        title.startAnimation(aniFade);
-    }
-
-    private void setupGifImage(){
+    private void setupImageViews(){
         //widgets init
-        splashGif = findViewById(R.id.splash_gif);
-        // gif image anim
-        Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
-        splashGif.startAnimation(aniFade);
+        ImageView avatar = findViewById(R.id.iv_splash_avatar);
+        ImageView dialogflow = findViewById(R.id.iv_splash_dialogflow);
+
+        //images entrance anim
+        Animation animFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
+        avatar.startAnimation(animFade);
+        dialogflow.startAnimation(animFade);
     }
 }

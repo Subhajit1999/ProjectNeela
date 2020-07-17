@@ -9,19 +9,22 @@ public class User {
     private String userName, userGender;
     private int userAge;
     private List<String> quotesPref, newsPref;
+    private String userCountry;
 
-    public User(String name, int age, String  gender, List<String> quotesPref, List<String> newsPref){
+    public User(String name, int age, String  gender, List<String> quotesPref, List<String> newsPref, String userCountry){
         userName = name;
         userAge = age;
         userGender = gender;
         this.quotesPref = quotesPref;
         this.newsPref = newsPref;
+        this.userCountry = userCountry;
     }
 
     public User(){
         //initializing fields in case of no args constructor
         userName = "";
         userGender = "";
+        userCountry = "";
         userAge = 0;
         quotesPref = new ArrayList<>();
         newsPref = new ArrayList<>();
@@ -47,6 +50,10 @@ public class User {
         this.quotesPref = quotesPref;
     }
 
+    public void setUserCountry(String userCountry) {
+        this.userCountry = userCountry;
+    }
+
     public String getUserName() {
         return userName;
     }
@@ -65,5 +72,9 @@ public class User {
 
     public List<String> getQuotesPref() {
         return quotesPref;
+    }
+
+    public String getUserCountry() {
+        return userCountry;
     }
 }

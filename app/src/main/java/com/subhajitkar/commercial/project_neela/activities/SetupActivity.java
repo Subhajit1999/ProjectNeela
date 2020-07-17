@@ -2,6 +2,7 @@ package com.subhajitkar.commercial.project_neela.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -9,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -17,16 +19,16 @@ import android.widget.Toast;
 import com.subhajitkar.commercial.project_neela.R;
 import com.subhajitkar.commercial.project_neela.adapters.SliderAdapter;
 import com.subhajitkar.commercial.project_neela.objects.User;
-import com.subhajitkar.commercial.project_neela.utils.NonSwipeableViewPager;
+import com.subhajitkar.commercial.project_neela.utils.NonSwipableViewPager;
 import com.subhajitkar.commercial.project_neela.utils.StaticFields;
 
 import pl.droidsonroids.gif.GifImageView;
 
-public class SetupActivity extends AppCompatActivity implements NonSwipeableViewPager.OnPageChangeListener{
+public class SetupActivity extends AppCompatActivity implements NonSwipableViewPager.OnPageChangeListener{
     private static final String TAG = "SetupActivity";
 
     private GifImageView splashGif;
-    private NonSwipeableViewPager sliderPager;
+    private NonSwipableViewPager sliderPager;
     private SliderAdapter sliderAdapter;
     private LinearLayout dotsLayout;
     private TextView[] mDots;
@@ -42,7 +44,7 @@ public class SetupActivity extends AppCompatActivity implements NonSwipeableView
         //widgets init
         sliderPager = findViewById(R.id.slider_viewpager);
         dotsLayout = findViewById(R.id.dots_layout);
-        sliderAdapter = new SliderAdapter(this);
+        sliderAdapter = new SliderAdapter(this, this);
         //setup viewpager with adapter
         sliderPager.setAdapter(sliderAdapter);
         sliderPager.setOnPageChangeListener(this);
@@ -92,10 +94,6 @@ public class SetupActivity extends AppCompatActivity implements NonSwipeableView
         Log.d(TAG, "setupGifImage: setting up gif avatar");
         //widgets init
         splashGif = findViewById(R.id.splash_gif);
-        // gif image anim
-        Animation aniFade = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_in);
-        aniFade.setDuration(500);
-        splashGif.startAnimation(aniFade);
     }
 
     private void addDotsIndicator(int pos){
@@ -132,21 +130,21 @@ public class SetupActivity extends AppCompatActivity implements NonSwipeableView
             prevBtn.setVisibility(View.INVISIBLE);
 
             prevBtn.setText("");
-            nextBtn.setText("Next");
+            nextBtn.setText(R.string.setup_next);
         }else if (position == mDots.length - 1){
             nextBtn.setEnabled(true);
             prevBtn.setEnabled(true);
             prevBtn.setVisibility(View.VISIBLE);
 
-            prevBtn.setText("Back");
-            nextBtn.setText("Finish");
+            prevBtn.setText(R.string.setup_back);
+            nextBtn.setText(R.string.setup_finish);
         }else{
             nextBtn.setEnabled(true);
             prevBtn.setEnabled(true);
             prevBtn.setVisibility(View.VISIBLE);
 
-            prevBtn.setText("Back");
-            nextBtn.setText("Next");
+            prevBtn.setText(R.string.setup_back);
+            nextBtn.setText(R.string.setup_next);
         }
     }
 

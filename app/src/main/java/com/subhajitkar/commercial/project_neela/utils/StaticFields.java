@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 
 import com.google.android.material.chip.Chip;
 import com.subhajitkar.commercial.project_neela.R;
@@ -46,5 +47,16 @@ public class StaticFields {
         chip.setRippleColorResource(R.color.blue_2);
         chip.setChipIconVisible(false);
         return chip;
+    }
+
+    public static String capitalizeString(String text){
+        Log.d(TAG, "capitalizeString: capitalizing text");
+        String[] words = text.split(" ");
+        StringBuilder builder = new StringBuilder();
+        for (String s : words) {
+            String cap = s.substring(0, 1).toUpperCase() + s.substring(1);
+            builder.append(cap).append(" ");
+        }
+        return builder.toString();
     }
 }
