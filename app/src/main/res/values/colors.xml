@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#197ABB</color>
     <color name="colorPrimaryDark">#ffffff</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccent">#49A8E8</color>
     <!-- custom colors -->
     <color name="blue_1">#197ABB</color>
     <color name="blue_2">#49A8E8</color>
@@ -13,4 +13,5 @@
     <!-- gradient colors -->
     <color name="start_color">#1EC5CF</color>
     <color name="end_color">#0962B1</color>
+    <color name="black_overlay">#66000000</color>
 </resources>

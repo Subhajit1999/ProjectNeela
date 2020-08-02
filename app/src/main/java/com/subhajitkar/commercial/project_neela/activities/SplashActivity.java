@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import com.subhajitkar.commercial.project_neela.R;
+import com.subhajitkar.commercial.project_neela.utils.StaticFields;
 
 public class SplashActivity extends AppCompatActivity {
     private static final String TAG = "SplashActivity";
@@ -28,10 +29,17 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent mainIntent = new Intent(SplashActivity.this, SetupActivity.class);
-                SplashActivity.this.startActivity(mainIntent);
-                SplashActivity.this.finish();
-                overridePendingTransition(R.anim.tran_slide_up,R.anim.tran_fade_out);
+                if(!StaticFields.userCredentials.isUserDataAvailable()) {   //if first time/ no data available
+                    Intent mainIntent = new Intent(SplashActivity.this, SetupActivity.class);
+                    SplashActivity.this.startActivity(mainIntent);
+                    SplashActivity.this.finish();
+                    overridePendingTransition(R.anim.tran_slide_up, R.anim.tran_fade_out);
+
+                }else{
+                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                    SplashActivity.this.startActivity(i);
+                    SplashActivity.this.finish();
+                }
             }
         }, SPLASH_DISPLAY_LENGTH);
     }

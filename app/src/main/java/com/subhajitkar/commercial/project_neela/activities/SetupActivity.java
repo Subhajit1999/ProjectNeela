@@ -20,6 +20,7 @@ import com.subhajitkar.commercial.project_neela.R;
 import com.subhajitkar.commercial.project_neela.adapters.SliderAdapter;
 import com.subhajitkar.commercial.project_neela.objects.User;
 import com.subhajitkar.commercial.project_neela.utils.NonSwipableViewPager;
+import com.subhajitkar.commercial.project_neela.utils.PreferenceManager;
 import com.subhajitkar.commercial.project_neela.utils.StaticFields;
 
 import pl.droidsonroids.gif.GifImageView;
@@ -80,9 +81,11 @@ public class SetupActivity extends AppCompatActivity implements NonSwipableViewP
                     sliderPager.setCurrentItem(mCurrentPage + 1);
 
                 }else if(mCurrentPage==3){
+                    //saving user data in prefs
+                    new PreferenceManager(SetupActivity.this).setUserPrefs(StaticFields.userCredentials);
                     Intent i = new Intent(SetupActivity.this, MainActivity.class);
                     startActivity(i);
-
+                    SetupActivity.this.finish();
                 }else{
                     Toast.makeText(getApplicationContext(), "PLease fill all the required details correctly.", Toast.LENGTH_SHORT).show();
                 }

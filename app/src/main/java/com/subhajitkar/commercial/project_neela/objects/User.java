@@ -77,4 +77,8 @@ public class User {
     public String getUserCountry() {
         return userCountry;
     }
+
+    public boolean isUserDataAvailable(){
+        return !userName.isEmpty() && !userGender.isEmpty() && userAge > 0 && quotesPref.size() > 0 && newsPref.size() > 0;
+    }
 }

@@ -14,14 +14,24 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
 import com.google.android.material.chip.Chip;
+import com.kaopiz.kprogresshud.KProgressHUD;
 import com.subhajitkar.commercial.project_neela.R;
+import com.subhajitkar.commercial.project_neela.objects.NewsObject;
 import com.subhajitkar.commercial.project_neela.objects.User;
+
+import java.util.List;
 
 public class StaticFields {
     private static final String TAG = "StaticFields";
 
     //static fields
     public static User userCredentials = new User();
+    public static KProgressHUD progressHUD;
+    public static String NEWSAPI_BASE_URL = "http://newsapi.org/v2/";
+    public static String NEWSAPI_AUTH_KEY = "094b87442ca64bcb9e84b5b139e463c4";
+    public static List<NewsObject> dailyNewsList;
+    public static String dailyNewsQuery;
+    public static String currentDate;
 
     //static functions
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -58,5 +68,22 @@ public class StaticFields {
             builder.append(cap).append(" ");
         }
         return builder.toString();
+    }
+
+    public static void showLoadingDialog(Context context, String msg1, String msg2, boolean cancelable){
+        Log.d(TAG, "showLoadingDialog: showing custom loading bar");
+        progressHUD = new KProgressHUD(context);
+        progressHUD.setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                .setLabel(msg1)
+                .setDetailsLabel(msg2)
+                .setCancellable(cancelable)
+                .setAnimationSpeed(2)
+                .setDimAmount(0.5f)
+                .show();
+    }
+
+    public static void hideLoadingDialog(){
+        Log.d(TAG, "hideLoadingDialog: hiding loading dialog");
+        progressHUD.dismiss();
     }
 }

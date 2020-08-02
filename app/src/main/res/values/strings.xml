@@ -71,10 +71,24 @@
         <item>Weather forecast</item>
     </string-array>
 
+    <string-array name="commands_tips">
+        <item>\"How are you?\"</item>
+        <item>\"Neela, tell me a joke\"</item>
+        <item>\"You are so funny, Neela.\"</item>
+        <item>\"How\'s the weather today?\"</item>
+        <item>\"What is TensorFlow?\"</item>
+        <item>\"Define Artificial Intelligence.\"</item>
+    </string-array>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="temp_title_home">Welcome back,\nSubhajit</string>
     <string name="temp_title_quotes">Daily Quotes</string>
     <string name="temp_title_news">Daily News</string>
     <string name="temp_version_num">Version: 1.0.1</string>
+    <string name="temp_tips_dialog_msg">\"How are you?\"\n\"Neela, tell me a joke\"\n\"You are so funny, Neela.\"\n\"How\'s the weather today?\"</string>
+    <string name="tips_dialog_title">Things to try</string>
+    <string name="tips_dialog_subtitle">You can just ask me these</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

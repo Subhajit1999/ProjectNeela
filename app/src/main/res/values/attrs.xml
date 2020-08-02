@@ -5,4 +5,5 @@
         <attr name="backgroundVideo" format="reference" />
     </declare-styleable>
     <attr name="CustomChipStyle" format="reference" />
+    <attr name="drawableFullScreenDialogNavigation" format="reference" />
 </resources>
